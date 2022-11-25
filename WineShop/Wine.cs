@@ -109,7 +109,7 @@ class WineProgram
     public static void LoadWineData()
     { 
 
-        string fileName = @"wine_record.text"; // load wine Record From Text File
+        string fileName = @"wine_records.txt"; // load wine Record From Text File
         if (File.Exists(fileName)) 
         {
             string[] lines = File.ReadAllLines(fileName); // reading all line and storing them in array of string
@@ -120,6 +120,7 @@ class WineProgram
                 wines.Add(new Wine(int.Parse(wi[0]), wi[1], int.Parse(wi[2].ToString()), double.Parse(wi[3]))); // adding wine to the list
             }
             chk = true;
+            Console.WriteLine("File Loaded Successfully, Enter 3 to see the loaded data");
         }
         else
         {
