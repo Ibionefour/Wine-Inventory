@@ -95,7 +95,7 @@ class WineProgram
     {
          
         Console.WriteLine("WELCOME TO IBBIE'S WINE INVENTORY");
-        Console.WriteLine("1. Load Data From File");
+        Console.WriteLine("1. Load Data ");
         Console.WriteLine("2. Add Wine");
         Console.WriteLine("3. Sort and display the wine records");
         Console.WriteLine("4. Search for a Wine");
@@ -107,16 +107,16 @@ class WineProgram
 
     public static void LoadWineData()
     {
-        
-        string fileName = @"C: \Users\kp081\Desktop\WineShop\WineShop\bin\Debug\wine_records.txt"; 
-        if (File.Exists(fileName))
+
+        string fileName = @"wine_record.text"; // load wine Record From Text File
+        if (File.Exists(fileName)) 
         {
-            string[] lines = File.ReadAllLines(fileName); 
-            int totalWines = lines.Length; 
-            foreach (var line in lines) 
+            string[] lines = File.ReadAllLines(fileName); // reading all line and storing them in array of string
+            int totalWines = lines.Length; // counting total wines in the list 
+            foreach (var line in lines) // looping through each line assigning the data to wine list 
             {
-                string[] wi = line.Split(',');
-                wines.Add(new Wine(int.Parse(wi[0]), wi[1], int.Parse(wi[2].ToString()), double.Parse(wi[3])));
+                string[] wi = line.Split(','); // spilting the column on space if in your data there is tab seperater you can use it
+                wines.Add(new Wine(int.Parse(wi[0]), wi[1], int.Parse(wi[2].ToString()), double.Parse(wi[3]))); // adding wine to the list
             }
             chk = true;
         }
@@ -135,7 +135,7 @@ class WineProgram
         Console.WriteLine(" Wine ID\t Wine Name\t Stock Available\t Price\t ");
         foreach (Wine w in wines)
         {
-            Console.WriteLine(w.toString());
+           Console.WriteLine(w.toString());
         }
         Console.WriteLine("\n");
     }
