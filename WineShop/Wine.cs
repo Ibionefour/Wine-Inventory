@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -11,8 +12,8 @@ namespace WineInventory
     {
         static void Main(string[] args)
         {
-           
             new WineProgram();
+
         }
     }
 }
@@ -106,7 +107,7 @@ class WineProgram
     }
 
     public static void LoadWineData()
-    {
+    { 
 
         string fileName = @"wine_record.text"; // load wine Record From Text File
         if (File.Exists(fileName)) 
