@@ -9,3 +9,4 @@ Files include Wine.s which is an entry point to the progam when it's run but Win
 
 Insturuction to open the project -simply clone the file or copy it to your visual studio environment and run it. 
 
+IMPORTANT - To ensure loading data from file, and some wine records first, save them and use the load functionality. It may not work intially if you are pulling or cloning the repo. 
